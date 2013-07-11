@@ -10,7 +10,7 @@ var txt2=txt1.toString(encoding='utf8');
 
 app.get('/', function(request, response) {
   response.send(txt);
-//  response.send(txt2);
+  response.send(txt2);
 });
 
 var port = process.env.PORT || 5000;
