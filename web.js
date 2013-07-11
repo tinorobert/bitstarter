@@ -3,10 +3,10 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 var fs=require('fs');
-fs.readFileSync('index.html');
+var txt=fs.readFileSync('index.html');
 
 app.get('/', function(request, response) {
-  response.send('FTW');
+  response.send(txt);
 });
 /*
 fs.readFile('index.html', function (err, data) {
