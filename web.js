@@ -3,17 +3,14 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 var fs=require('fs');
-var txt=fs.readFileSync('index.html',encoding='utf8');
+var buf=require('buf')
+//var txt=fs.readFileSync('index.html',encoding='utf8');
+var txt=fs.readFileSync('index.html');
+var txt2=buf.toString('utf8');
 
 app.get('/', function(request, response) {
   response.send(txt);
 });
-/*
-fs.readFile('index.html', function (err, data) {
-  if (err) throw err;
-   console.log(data);
-});
-*/
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
